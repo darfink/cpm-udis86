@@ -80,6 +80,5 @@ set(ModuleSources
 
 # Build the library.
 add_library(${CPM_LIB_TARGET_NAME} ${ModuleSources} ${ModuleHeaders})
-if(NOT EMSCRIPTEN AND CPM_LIBRARIES)
-  target_link_libraries(${CPM_LIB_TARGET_NAME} ${CPM_LIBRARIES})
-endif()
+
+CPM_ExportAdditionalIncludeDir("${UDIS86_DIR}")
